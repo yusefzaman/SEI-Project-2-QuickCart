@@ -6,12 +6,14 @@
 
 ### By:
 
-### Yusef Zaman [GitHub](https://github.com/yusefzaman) | [LinkedIn](https://www.linkedin.com/in/yusefzaman/)
+### Yusef Zaman 
+#### [GitHub](https://github.com/yusefzaman) | [LinkedIn](https://www.linkedin.com/in/yusefzaman/)
 
-### Hawra Alattar [GitHub](.......) | [LinkedIn](.......)
+### Hawra Alattar
+#### [GitHub](.......) | [LinkedIn](.......)
 
-### Zainab Altalaq [GitHub](.......) | [LinkedIn](.......)
-
+### Zainab Altalaq
+#### [GitHub](.......) | [LinkedIn](.......)
 ---
 
 ### **_Description_**
