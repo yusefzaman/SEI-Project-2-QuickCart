@@ -12,11 +12,11 @@
 
 ### Hawra Alattar
 
-#### [GitHub](.......) | [LinkedIn](.......)
+#### [GitHub](https://github.com/hawraalattar) | [LinkedIn](https://www.linkedin.com/in/hawraalattar/)
 
 ### Zainab Altalaq
 
-#### [GitHub](.......) | [LinkedIn](.......)
+#### [GitHub](https://github.com/zainabaltalaq) | [LinkedIn](https://www.linkedin.com/in/zainabaltalaq/)
 
 ---
 
