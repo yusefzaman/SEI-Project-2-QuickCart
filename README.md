@@ -46,7 +46,7 @@
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/89R28lox/unit-2-project).
 
-##### A draw.io file where the initial wireframe can be seen [here](URhttps://app.diagrams.net/#Hyusefzaman%2FSEI-Project-2-QuickCart%2Fmain%2FWireFrame.drawio#%7B%22pageId%22%3A%2203018318-947c-dd8e-b7a3-06fadd420f32%22%7DL).
+##### A draw.io file where the initial wireframe can be seen [here](https://www.canva.com/design/DAGF-xxIRVg/lBXQV99-FiNTJCVeclvZmg/edit?utm_content=DAGF-xxIRVg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
 
 ##### The project was deployed and can be viewed [here](URL).
 
