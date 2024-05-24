@@ -1,10 +1,10 @@
-const Category = require("../models/category")
+const Category = require('../models/category')
 
 async function index(req, res) {
-  const category = await Category.find({})
-  res.render("categories/index", { title: "All categories", category })
+  const categories = await Category.find({})
+  res.render('categories/index', { title: 'All categories', categories })
 }
 
 module.exports = {
-  index,
+  index
 }
