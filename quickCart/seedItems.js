@@ -7,8 +7,9 @@ const createItem = async () => {
     const doc = await Item.create({
       itemName: "T-Shirt",
       itemImg: "String",
-      itemPrice: 5,
+      itemPrice: 15,
       itemDescription: "String",
+      review: [{ type: Schema.Types.ObjectId, ref: "review" }],
     })
 
     console.log("Done creating item", doc)
