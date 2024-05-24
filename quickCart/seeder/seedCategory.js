@@ -7,9 +7,8 @@ const Category = require("./models/category") //this is now a mongoose object an
 const createCategories = async () => {
   try {
     const doc = await Category.create({
-      name: "Pluto",
-      climate: "Arctic",
-      population: 5,
+      categoryName: "Pluto",
+      categoryImg: "empty for now",
     })
 
     console.log("Done creating categories", doc)
@@ -18,5 +17,4 @@ const createCategories = async () => {
   }
 }
 
-// Call the async function
 createCategories()
