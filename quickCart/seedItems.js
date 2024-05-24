@@ -12,6 +12,7 @@ const createItem = async () => {
         itemPrice: 15,
         itemDescription:
           'Show your Bahraini spirit! This locally-crafted t-shirt boasts comfortable, breathable fabric and eye-catching Bahraini designs, making it a unique addition to your collection.'
+
       },
       {
         itemName: 'Hoodie',
