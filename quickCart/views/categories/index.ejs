@@ -1,18 +1,18 @@
-
 <%- include('../partials/header') %>
 
 <table id="list">
-
   <tbody>
     <% categories.forEach(function(category) { %>
-      <tr>
-        <td><%= category.categoryName %></td>
-        <td><%= category.categoryImg %></td>
-        <td><a href="/categories/<%= category._id %>"> <%= category.categoryName %> </a></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
-  
-<%- include('../partials/footer') %>
+    <tr>
+      <td><%= category.categoryImg %></td>
+      <td>
+        <a href="/categories/<%= category._id %>">
+          <%= category.categoryName %>
+        </a>
+      </td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
 
+<%- include('../partials/footer') %>
