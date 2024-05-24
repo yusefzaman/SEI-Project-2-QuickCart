@@ -17,7 +17,7 @@ const createCategories = async () => {
       },
       {
         categoryName: "Electronics",
-        categoryImg: "",
+        categoryImg: "string",
       }
     )
 
