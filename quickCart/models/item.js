@@ -2,10 +2,11 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const ItemSchema = new Schema(
   {
-    ItemName: String,
+    itemName: String,
     itemImg: String,
     itemPrice: Number,
     itemDescription: String,
+    review: [{ type: Schema.Types.ObjectId, ref: "review" }],
   },
   {
     timestamps: true,
