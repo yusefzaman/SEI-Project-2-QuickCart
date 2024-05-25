@@ -1,26 +1,36 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
+  color: #31241e;
 }
 
 body {
   margin: 0;
   height: 100vh;
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 50px 30px 1fr;
   grid-template-areas:
+    'header'
     'nav'
     'main';
 }
 
+header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: #f6f4f3;
+}
+
 body > nav {
   grid-area: nav;
-  background-color: #b8c0c2;
+  background-color: #f6f4f3;
   display: flex;
-  justify-content: flex-end;
   align-items: center;
   padding: 0 20px 0 30px;
+  border-bottom: 1.5px solid #31241e;
 }
 
 body > main {
@@ -28,7 +38,7 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e8eceb;
+  background-color: #f6f4f3;
   padding: 20px;
   overflow-y: scroll;
 }
@@ -45,11 +55,12 @@ nav > a {
 }
 
 nav > a:hover:not(.active) {
-  color: white;
-  background-color: #424748;
+  background-color: #402e2033;
 }
 
 nav > a.active {
-  color: white;
+  color: #86654b;
+  font-size: large;
+  font-weight: bolder;
   cursor: default;
 }
