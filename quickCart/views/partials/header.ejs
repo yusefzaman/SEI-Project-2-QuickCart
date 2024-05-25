@@ -7,11 +7,16 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title><%= title %></title>
 </head>
+
 <body>
+  <header>
+    <img src="./imgs/logo.png" alt="Logo" class="logo">
+  </header>
   <nav>
-    <!-- <img src="/images/camera.svg"> -->
+    <!-- <img src="https://iconape.com/wp-content/files/qw/369870/svg/login-logo-icon-png-svg.png"> -->
     <a href="/categories"	<%- title === 'All categories' ? 'class="active"' : '' %>>
 		HOME</a>
+    <a> ABOUT </a>
   </nav>
   <main>
     <h1><%= title %></h1>
