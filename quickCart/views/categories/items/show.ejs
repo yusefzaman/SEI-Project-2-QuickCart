@@ -50,6 +50,18 @@
             <td><%= review.createdAt.toLocaleDateString() %></td>
             <td><%= review.reviewContent %></td>
             <td><%= review.reviewRating %></td>
+            <td>
+
+              <form action="/items/<%= review.id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            </td>
+            <td>
+              <form action="/items/<%= review.id %>?_method=PUT" method="POST" autocomplete="off">
+                <input type="text" name="reviewContent" %>">
+                <button type="submit">Update review</button>
+              </form>
+            </td>
           </tr>
           <% }); %>
         </tbody>
