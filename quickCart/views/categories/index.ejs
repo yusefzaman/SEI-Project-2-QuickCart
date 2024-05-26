@@ -7,11 +7,9 @@
   <% categories.forEach(function(category) { %>
   <div class="category-box">
     <img src="<%= category.categoryImg %>" class="img-caterogy" />
-    <button class="categories-button">
-      <a href="/categories/<%= category._id %>">
-        <%= category.categoryName %>
-      </a>
-    </button>
+    <a class="categories-button" href="/categories/<%= category._id %>">
+      <%= category.categoryName %>
+    </a>
   </div>
   <% }); %> <%- include('../partials/footer') %>
 </body>

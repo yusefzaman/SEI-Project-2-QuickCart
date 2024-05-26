@@ -1,17 +1,21 @@
-const Review = require("../models/item")
+const Item = require('../models/item')
+const Review = require('../models/review')
 
 async function create(req, res) {
   try {
-    const category = await Review.findById(req.params.id)
-    category.review.push(req.body)
-    const addinfo = await category.save()
-    // res.redirect(`/categories/${addinfo._id}`)
+    const item = await Item.findById(req.params.id)
+    // Create a review
+    const review = await Review.create(req.body)
+    // Push id of newly created review
+    item.review.push(review._id)
+
+    await item.save()
+    res.redirect(`/categories/items/show/${item._id}`)
   } catch (err) {
-    console.error(err)
-    res.status(500).send(err.message)
+    console.log(err)
   }
 }
 
 module.exports = {
-  create,
+  create
 }
