@@ -8,12 +8,12 @@ body {
   margin: 0;
   height: 100vh;
   display: grid;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   grid-template-rows: 50px 30px 1fr;
   grid-template-areas:
-    'header'
-    'nav'
-    'main';
+    "header"
+    "nav"
+    "main";
 }
 
 header {
@@ -83,7 +83,7 @@ img {
 
 a {
   text-decoration: none;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .categories-button {
@@ -104,7 +104,7 @@ a {
   margin-left: 30px;
 }
 
-#add-review-form input[type='submit'] {
+#add-review-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
 }
@@ -130,6 +130,36 @@ a {
   height: 250px;
 }
 
+.itemDetails-box {
+  background-color: white;
+  width: 900px;
+  height: 900px;
+  padding: 50px;
+  border-radius: 30px;
+}
+
+.review-box {
+  margin-top: 40px;
+  background-color: rgb(217, 211, 211);
+  width: 900px;
+  height: 900px;
+  padding: 30px;
+  border-radius: 2px;
+}
+
+.comment-bar {
+  width: 900px;
+  margin-bottom: 20px;
+}
+
+#textarea-review {
+  width: 800px;
+}
+
+.review-table {
+  width: 100%;
+  text-align: center;
+  }
 .login img {
   height: 30px;
   width: 30px;
@@ -140,6 +170,8 @@ a {
   justify-content: center;
   align-items: end;
   height: 34px;
+  position: absolute;
+  right: 0;
 }
 
 .review-user {

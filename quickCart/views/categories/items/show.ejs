@@ -1,68 +1,56 @@
-<body>
-  <table>
-    <tbody>
-      <h1><%= title %></h1>
-      <section>
-        <div>Item:</div>
-        <div><%= item.itemName %></div>
-        <div>Img</div>
-        <div><%= item.itemImg %></div>
-        <div>Price</div>
-        <div><%= item.itemPrice %></div>
-        <div>Description:</div>
-        <div><%= item.itemDescription %></div>
-      </section>
-    </tbody>
-  </table>
+<%- include('../../partials/header') %>
 
-  <br><br><h2>Reviews</h2>
-<form id="add-review-form" method="POST"
-  action="/items/<%= item._id%>">
-  <label>Review:</label>
-  <textarea name="reviewContent"></textarea>
-  <label>Rating:</label>
-  <select name="reviewRating">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5" selected>5</option>
-  </select>
-  <input type="submit" value="Add Review">
-</form>
-
-<% if (item.review.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>User</th>
-        <th>Date</th>
-        <th>Review</th>
-        <th>Rating</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% item.review.forEach(function(r) { %>
-        <tr>
-          <td class="review-user"><img alt="avatar" src="<%= r.userAvatar %>" referrerpolicy="no-referrer" ><%= r.userName %></td>
-          <td><%= r.createdAt.toLocaleDateString() %></td>
-          <td><%= r.reviewContent %></td>
-          <td><%= r.reviewRating %></td>
-          <td>
-            <% if (user?._id.equals(r.user)) { %>
-              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-            <% } %>
-          </td>
-        </tr>
-      <% }); %>
-    </tbody>
-  </table>
-<% } else { %>
-  <h5>No Reviews Yet</h5>
-<% } %>
+  <div class=review-box>
+    <div class="comment-bar">
+      <h3> <%= item.itemName %> Reviews</h3>
+      <form method="POST" action="/items/<%= item._id%>">
+        <table>
+          <tr>
+            <td>Review:</td>
+            <td><input id="textarea-review" type="text" name="reviewContent"></textarea></td>
+          </tr>
+          <tr>
+            <td>Rating:</td>
+            <td> <select name="reviewRating" id="textarea-review">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5" selected>5</option>
+              </select>
+            </td>
+          <tr>
+            <td colspan="2"> <input type="submit" value="Add Review">
+            </td>
+          </tr>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <div class="show-reviews">
+      <% if (item.review.length) { %>
+      <table class="review-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th style="width:60%">Review</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% item.review.forEach(function(review) { %>
+          <tr>
+            <td><%= review.createdAt.toLocaleDateString() %></td>
+            <td><%= review.reviewContent %></td>
+            <td><%= review.reviewRating %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <% } else { %>
+      <h5>No Reviews Yet</h5>
+      <% } %>
+    </div>
+  </div>
 
 </body>
-
-

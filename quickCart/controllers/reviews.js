@@ -1,5 +1,5 @@
-const Item = require('../models/item')
-const Review = require('../models/review')
+const Item = require("../models/item")
+const Review = require("../models/review")
 
 async function create(req, res) {
   try {
@@ -23,5 +23,5 @@ async function create(req, res) {
 }
 
 module.exports = {
-  create
+  create,
 }
