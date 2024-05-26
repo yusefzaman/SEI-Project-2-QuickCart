@@ -138,6 +138,8 @@ a {
 .login {
   display: flex;
   justify-content: center;
-  align-items:end;
+  align-items: end;
   height: 34px;
+  position: absolute;
+  right: 0;
 }
