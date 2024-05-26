@@ -17,7 +17,12 @@ async function show(req, res) {
   })
 }
 
+async function  about(req,res) {
+res.render('categories/about', {title: "About"})
+}
+
 module.exports = {
   index,
-  show
+  show,
+  about
 }
