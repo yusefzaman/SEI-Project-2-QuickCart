@@ -9,8 +9,7 @@
     <h1><%= title %></h1>
     <table>
       <tbody>
-        <% items.forEach(item => { %> <% if (item.itemType ===
-        categories.categoryName) { %>
+        <% items.forEach(item => { %>
         <tr>
           <td>
             <a href="/categories/items/show/<%= item._id%>"
@@ -19,7 +18,7 @@
           <td><img src="<%= item.itemImg %>" alt="<%= item.itemName %>" /></td>
           <td><%= item.itemPrice %></td>
         </tr>
-        <% } %> <% }); %>
+        <% }); %>
       </tbody>
     </table>
   </body>
