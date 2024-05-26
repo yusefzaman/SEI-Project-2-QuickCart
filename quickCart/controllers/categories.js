@@ -16,16 +16,16 @@ async function show(req, res) {
   })
 }
 
-async function showItemDetails(req, res) {
-  const item = await Item.findById(req.params.id)
-  res.render("categories/items/show", {
-    title: "Item Details",
-    item,
-  })
-}
+// async function showItem(req, res) {
+//   const item = await Item.findById(req.params.id)
+//   res.render("categories/items/show", {
+//     title: "Item Details",
+//     item,
+//   })
+// }
 
 module.exports = {
   index,
   show,
-  showItemDetails,
+  // showItem,
 }

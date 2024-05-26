@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 const ItemSchema = new Schema(
   {
@@ -8,11 +8,11 @@ const ItemSchema = new Schema(
     itemDescription: String,
     itemType: String,
 
-    review: [{ type: Schema.Types.ObjectId, ref: 'review' }]
+    review: [{ type: Schema.Types.ObjectId, ref: "review" }],
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 )
 
-module.exports = mongoose.model('Item', ItemSchema)
+module.exports = mongoose.model("Item", ItemSchema)
