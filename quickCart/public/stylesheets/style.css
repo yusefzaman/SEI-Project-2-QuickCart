@@ -173,3 +173,14 @@ a {
   position: absolute;
   right: 0;
 }
+
+.review-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-user img {
+  border-radius: 50%;
+  height: 40px;
+}
