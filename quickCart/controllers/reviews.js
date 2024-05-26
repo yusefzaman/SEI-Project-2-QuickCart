@@ -1,17 +1,16 @@
-const Review = require("../models/item")
+const Item = require('../models/item')
 
 async function create(req, res) {
+  const item = await Item.findById(req.params.id)
+  item.review.push(req.body)
   try {
-    const category = await Review.findById(req.params.id)
-    category.review.push(req.body)
-    const addinfo = await category.save()
-    // res.redirect(`/categories/${addinfo._id}`)
+    await review.save()
   } catch (err) {
-    console.error(err)
-    res.status(500).send(err.message)
+    console.log(err)
   }
+  res.redirect(`categories/items/show/${item._id}`)
 }
 
 module.exports = {
-  create,
+  create
 }

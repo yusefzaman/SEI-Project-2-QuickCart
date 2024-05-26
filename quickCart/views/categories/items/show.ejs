@@ -14,4 +14,47 @@
       </section>
     </tbody>
   </table>
+
+  <br><br><h2>Reviews</h2>
+<form id="add-review-form" method="POST"
+  action="/items/show/<%= item._id %>/reviews">
+  <label>Review:</label>
+  <textarea name="reviewContent"></textarea>
+  <label>Rating:</label>
+  <select name="reviewRating">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5" selected>5</option>
+  </select>
+  <input type="submit" value="Add Review">
+</form>
+
+<% if (item.review.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% item.review.forEach(function(r) { %>
+        <tr>
+          <!-- .toLocaleDateString() provides a more friendly date format -->
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.reviewContent %></td>
+          <td><%= r.reviewRating %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
+
 </body>
+
+
