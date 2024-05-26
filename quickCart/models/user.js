@@ -4,8 +4,13 @@ const Schema = mongoose.Schema
 const userSchema = new Schema(
   {
     name: String,
+    googleId: {
+      type: String,
+      required: true
+    },
     email: String,
-    phoneNumber: String
+    phoneNumber: String,
+    avatar: String
   },
   {
     timestamps: true
