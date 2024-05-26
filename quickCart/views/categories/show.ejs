@@ -1,13 +1,16 @@
 <%- include('../partials/header') %>
 
-  <body>
-        <% items.forEach(item => { %> 
-            <a href="/categories/items/show/<%= item._id%>"
-              ><%= item.itemName %></a>
-<img src="<%= item.itemImg %>" alt="<%= item.itemName %>" />
-<%= item.itemPrice %>
-
-<% }); %>
-
-  </body>
-</html>
+<body>
+  <div class="box">
+    <% items.forEach(item => { %>
+    <div class="items-box">
+      <div class="box-text">
+        <img src="<%= item.itemImg %>" class="img-items" />
+        <h4><a href="/categories/items/show/<%= item._id%>"><%= item.itemName %></a></h4>
+        <h4><%= item.itemPrice %> BHD</h4>
+        <button class="categories-button">ADD TO CART</button>
+      </div>
+    </div>
+    <% }); %>
+  </div>
+</body>
