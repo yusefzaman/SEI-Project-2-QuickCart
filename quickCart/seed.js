@@ -2,10 +2,11 @@ require("dotenv").config()
 require("./config/database")
 
 const Item = require("./models/item")
+const Category = require("./models/category")
 
-const createItem = async () => {
+const createCategories = async () => {
   try {
-    const doc = await Item.create(
+    const items = await Item.create([
       {
         itemName: "T-Shirt",
         itemImg: "String",
@@ -19,7 +20,7 @@ const createItem = async () => {
         itemImg: "String",
         itemPrice: 20,
         itemDescription:
-          "Crafted with Bahraini pride, this cozy hoodie is perfect for everyday comfort. Rep your local style with unique designs that celebrate island life. ",
+          "Crafted with Bahraini pride, this cozy hoodie is perfect for everyday comfort. Rep your local style with unique designs that celebrate island life.",
         itemType: "Clothes",
       },
       {
@@ -27,7 +28,7 @@ const createItem = async () => {
         itemImg: "String",
         itemPrice: 25,
         itemDescription:
-          "These trainers will last you a lifetime, made by the local artisans of manama, they boast exelent quality and duaribitiy",
+          "These trainers will last you a lifetime, made by the local artisans of Manama, they boast excellent quality and durability.",
         itemType: "Clothes",
       },
       {
@@ -35,7 +36,7 @@ const createItem = async () => {
         itemImg: "String",
         itemPrice: 100,
         itemDescription:
-          "Level up your gameplay with this ergonomic gaming table!  Ample space for multiple monitors,  cup holder, and cable management keep your battlestation organized for victory.",
+          "Level up your gameplay with this ergonomic gaming table! Ample space for multiple monitors, cup holder, and cable management keep your battlestation organized for victory.",
         itemType: "Furniture",
       },
       {
@@ -59,7 +60,7 @@ const createItem = async () => {
         itemImg: "String",
         itemPrice: 350,
         itemDescription:
-          "Immerse yourself in the action! This TV boasts stunning visuals and [mention a key feature, e.g., smooth refresh rate for gamers, vibrant HDR for movie lovers] for an unforgettable entertainment experience. Upgrade your home cinema and enjoy everything you love in incredible detail. ",
+          "Immerse yourself in the action! This TV boasts stunning visuals and smooth refresh rate for gamers, vibrant HDR for movie lovers for an unforgettable entertainment experience. Upgrade your home cinema and enjoy everything you love in incredible detail.",
         itemType: "Electronics",
       },
       {
@@ -75,14 +76,49 @@ const createItem = async () => {
         itemImg: "String",
         itemPrice: 450,
         itemDescription:
-          "Gear up for portable power! This gaming laptop features [mention a key strength, e.g., the latest NVIDIA RTX graphics] for smooth gameplay on the go. Take your adventures anywhere and dominate the competition with desktop-grade performance.",
+          "Gear up for portable power! This gaming laptop features the latest NVIDIA RTX graphics for smooth gameplay on the go. Take your adventures anywhere and dominate the competition with desktop-grade performance.",
         itemType: "Electronics",
-      }
+      },
+    ])
+
+    const clothesItems = items
+      .filter((item) => item.itemType === "Clothes")
+      .map((item) => item._id)
+    const furnitureItems = items
+      .filter((item) => item.itemType === "Furniture")
+      .map((item) => item._id)
+    const electronicsItems = items
+      .filter((item) => item.itemType === "Electronics")
+      .map((item) => item._id)
+
+    const clothesCategory = await Category.create({
+      categoryName: "Clothes",
+      categoryImg: "https://cdn-icons-png.flaticon.com/512/130/130302.png",
+      items: clothesItems,
+    })
+
+    const furnitureCategory = await Category.create({
+      categoryName: "Furniture",
+      categoryImg: "https://cdn-icons-png.flaticon.com/512/5029/5029075.png",
+      items: furnitureItems,
+    })
+
+    const electronicsCategory = await Category.create({
+      categoryName: "Electronics",
+      categoryImg: "",
+      items: electronicsItems,
+    })
+
+    console.log(
+      "Done creating categories",
+      clothesCategory,
+      furnitureCategory,
+      electronicsCategory
     )
-    console.log("Done creating item", doc)
   } catch (err) {
     console.error(err)
   }
 }
 
-createItem()
+// Call the async function
+createCategories()

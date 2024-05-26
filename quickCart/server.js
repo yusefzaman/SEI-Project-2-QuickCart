@@ -11,6 +11,7 @@ require("./config/database")
 var indexRouter = require("./routes/index")
 var usersRouter = require("./routes/users")
 var categoriesRouter = require("./routes/categories")
+var itemsRouter = require("./routes/items")
 // var reviewsRouter = require("./routes/reviews")
 
 var app = express()
@@ -28,6 +29,7 @@ app.use(methodOverride("_method"))
 app.use("/", indexRouter)
 app.use("/users", usersRouter)
 app.use("/categories", categoriesRouter)
+app.use("/categories/", itemsRouter)
 // app.use("/", reviewsRouter)
 
 // catch 404 and forward to error handler
