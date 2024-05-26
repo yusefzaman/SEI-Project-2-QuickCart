@@ -1,20 +1,13 @@
 <%- include('../partials/header') %>
 
-  <body>
-    <h1><%= title %></h1>
-    <table>
-      <tbody>
-        <% items.forEach(item => { %>
-        <tr>
-          <td>
-            <a href="/categories/items/show/<%= item._id%>"
-              ><%= item.itemName %></a>
-          </td>
-          <td><img src="<%= item.itemImg %>" alt="<%= item.itemName %>" /></td>
-          <td><%= item.itemPrice %></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-  </body>
+<body>
+  <% items.forEach(item => { %>
+  <div class="items-box">
+    <a href="/categories/items/show/<%= item._id%>"><%= item.itemName %></a>
+    <img src="<%= item.itemImg %>" alt="<%= item.itemName %>" />
+    <%= item.itemPrice %>
+    <% }); %>
+  </div>
+</body>
+
 </html>
