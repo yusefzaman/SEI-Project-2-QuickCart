@@ -8,10 +8,17 @@ var methodOverride = require('method-override')
 require('dotenv').config()
 require('./config/database')
 
+<<<<<<< HEAD
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
 var categoriesRouter = require('./routes/categories')
 var itemsRouter = require('./routes/items')
+=======
+var indexRouter = require("./routes/index")
+var usersRouter = require("./routes/users")
+var categoriesRouter = require("./routes/categories")
+var itemsRouter = require("./routes/items")
+>>>>>>> origin/hawraa
 // var reviewsRouter = require("./routes/reviews")
 
 var app = express()
@@ -26,10 +33,17 @@ app.use(cookieParser())
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(methodOverride('_method'))
 
+<<<<<<< HEAD
 app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/categories', categoriesRouter)
 app.use('/categories/', itemsRouter)
+=======
+app.use("/", indexRouter)
+app.use("/users", usersRouter)
+app.use("/categories", categoriesRouter)
+app.use("/categories/", itemsRouter)
+>>>>>>> origin/hawraa
 // app.use("/", reviewsRouter)
 
 // catch 404 and forward to error handler
