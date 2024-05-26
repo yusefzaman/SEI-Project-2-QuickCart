@@ -10,9 +10,9 @@ body {
   display: grid;
   grid-template-rows: 50px 30px 1fr;
   grid-template-areas:
-    'header'
-    'nav'
-    'main';
+    "header"
+    "nav"
+    "main";
 }
 
 header {
@@ -63,4 +63,9 @@ nav > a.active {
   font-size: large;
   font-weight: bolder;
   cursor: default;
+}
+
+img {
+  width: 100px;
+  height: 100px;
 }
