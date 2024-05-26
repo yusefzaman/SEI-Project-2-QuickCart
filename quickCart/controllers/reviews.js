@@ -6,6 +6,12 @@ async function create(req, res) {
     const item = await Item.findById(req.params.id)
     // Create a review
     const review = await Review.create(req.body)
+
+    // The user-centric info to req.body (of the new review)
+    req.body.user = req.user._id
+    req.body.userName = req.user.name
+    req.body.userAvatar = req.user.avatar
+
     // Push id of newly created review
     item.review.push(review._id)
 
