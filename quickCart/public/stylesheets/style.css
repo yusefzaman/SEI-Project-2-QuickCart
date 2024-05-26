@@ -86,7 +86,7 @@ a {
   font-family: "Times New Roman", Times, serif;
 }
 
-button {
+.categories-button {
   margin-top: 3px;
   padding: 10px;
   color: black;
@@ -96,4 +96,25 @@ button {
   min-width: 1000px;
   height: 200px;
   margin-left: 30px;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+}
+.items-box {
+  background-color: rgb(214, 210, 210);
+  max-width: 300px;
+  min-height: 400px;
+  margin: 40px;
+}
+
+.box-text {
+  margin: 50px;
+  text-align: center;
+}
+
+.img-items {
+  min-width: 200px;
+  height: 250px;
 }
