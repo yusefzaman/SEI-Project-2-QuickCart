@@ -129,3 +129,34 @@ a {
   min-width: 200px;
   height: 250px;
 }
+
+.itemDetails-box {
+  background-color: white;
+  width: 900px;
+  height: 900px;
+  padding: 50px;
+  border-radius: 30px;
+}
+
+.review-box {
+  margin-top: 40px;
+  background-color: rgb(217, 211, 211);
+  width: 900px;
+  height: 900px;
+  padding: 30px;
+  border-radius: 2px;
+}
+
+.comment-bar {
+  width: 900px;
+  margin-bottom: 20px;
+}
+
+#textarea-review {
+  width: 800px;
+}
+
+.review-table {
+  width: 100%;
+  text-align: center;
+}
