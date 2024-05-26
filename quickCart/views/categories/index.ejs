@@ -6,7 +6,7 @@
   </h1>
   <% categories.forEach(function(category) { %>
   <div class="category-box">
-    <img src="<%= category.categoryImg %>" class="img-caterogy" />
+    <img src="<%= category.categoryImg %>" class="img-caterogy" style="display: inline;"/>
     <a class="categories-button" href="/categories/<%= category._id %>">
       <%= category.categoryName %>
     </a>
