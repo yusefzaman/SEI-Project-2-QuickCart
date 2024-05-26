@@ -7,7 +7,6 @@ const ItemSchema = new Schema(
     itemPrice: Number,
     itemDescription: String,
     itemType: String,
-
     review: [{ type: Schema.Types.ObjectId, ref: 'review' }]
   },
   {
@@ -15,4 +14,4 @@ const ItemSchema = new Schema(
   }
 )
 
-module.exports = mongoose.model('Item', ItemSchema)
+module.exports = mongoose.model('item', ItemSchema)
