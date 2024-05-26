@@ -4,7 +4,7 @@
   <tbody>
     <% categories.forEach(function(category) { %>
     <tr>
-      <td><%= category.categoryImg %></td>
+      <td><img src="<%= category.categoryImg %>" /></td>
       <td>
         <a href="/categories/<%= category._id %>">
           <%= category.categoryName %>
