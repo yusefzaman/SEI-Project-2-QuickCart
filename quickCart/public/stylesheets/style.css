@@ -8,12 +8,12 @@ body {
   margin: 0;
   height: 100vh;
   display: grid;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   grid-template-rows: 50px 30px 1fr;
   grid-template-areas:
-    "header"
-    "nav"
-    "main";
+    'header'
+    'nav'
+    'main';
 }
 
 header {
@@ -83,7 +83,7 @@ img {
 
 a {
   text-decoration: none;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 button {
@@ -96,4 +96,9 @@ button {
   min-width: 1000px;
   height: 200px;
   margin-left: 30px;
+}
+
+#add-review-form input[type='submit'] {
+  width: 10rem;
+  grid-column: 2 / 3;
 }

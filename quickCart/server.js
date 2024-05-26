@@ -30,7 +30,8 @@ app.use('/', indexRouter)
 app.use('/users', usersRouter)
 app.use('/categories', categoriesRouter)
 app.use('/categories/', itemsRouter)
-app.use('/categories/', reviewsRouter)
+// app.use('/categories/', reviewsRouter)
+app.use('/', reviewsRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

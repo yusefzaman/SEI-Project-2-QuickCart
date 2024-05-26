@@ -17,7 +17,7 @@
 
   <br><br><h2>Reviews</h2>
 <form id="add-review-form" method="POST"
-  action="/items/show/<%= item._id %>/reviews">
+  action="/items/<%= item._id%>">
   <label>Review:</label>
   <textarea name="reviewContent"></textarea>
   <label>Rating:</label>
@@ -43,7 +43,6 @@
     <tbody>
       <% item.review.forEach(function(r) { %>
         <tr>
-          <!-- .toLocaleDateString() provides a more friendly date format -->
           <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.reviewContent %></td>
           <td><%= r.reviewRating %></td>
