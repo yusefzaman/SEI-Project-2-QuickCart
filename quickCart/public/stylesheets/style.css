@@ -197,7 +197,8 @@ a {
   align-items: end;
   height: 34px;
   position: absolute;
-  right: 70px;
+  right: 130px;
+margin-bottom: 35px;
 }
 .basketIcon {
   height: 40px;
@@ -205,6 +206,13 @@ a {
   margin-bottom: 18px;
   position: absolute;
   right: 30px;
+}
+.userLogo{
+  height: 40px;
+  width: auto;
+  margin-bottom: 18px;
+  position: absolute;
+  right: 100px;
 }
 
 .review-user {
