@@ -53,11 +53,13 @@
             <td>
 
               <form action="/items/<%= review.id %>?_method=DELETE" method="POST">
+                <input type="hidden" name="itemId" value=<%= item._id %>>
                 <button type="submit">X</button>
               </form>
             </td>
             <td>
               <form action="/items/<%= review.id %>?_method=PUT" method="POST" autocomplete="off">
+                <input type="hidden" name="itemId" value=<%= item._id %>>
                 <input type="text" name="reviewContent" %>">
                 <button type="submit">Update review</button>
               </form>

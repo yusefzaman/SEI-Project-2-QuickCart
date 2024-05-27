@@ -14,14 +14,25 @@ async function create(req, res) {
 }
 
 async function deleteReview(req, res) {
-  const review = await Review.findByIdAndDelete(req.params.id)
-  res.redirect(`/categories/items/show/`)
+  try {
+    const itemId = req.body.itemId
+    const review = await Review.findByIdAndDelete(req.params.id)
+    res.redirect(`/categories/items/show/${itemId}`)
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 async function updateReview(req, res) {
-  const updatedReview = await Review.findByIdAndUpdate(req.params.id, {
-    reviewContent: req.body.reviewContent,
-  })
+  try {
+    const itemId = req.body.itemId
+    const updatedReview = await Review.findByIdAndUpdate(req.params.id, {
+      reviewContent: req.body.reviewContent,
+    })
+    res.redirect(`/categories/items/show/${itemId}`)
+  } catch (err) {
+    console.log(err)
+  }
 }
 
 module.exports = {
