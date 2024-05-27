@@ -9,6 +9,7 @@
 
   <div class=review-box>
     <div class="comment-bar">
+      <% if (user) { %>
       <h3> <%= item.itemName %> Reviews</h3>
       <form method="POST" action="/items/<%= item._id%>">
         <table>
@@ -33,6 +34,7 @@
           </tr>
         </table>
       </form>
+      <% } %>
     </div>
     <div class="show-reviews">
       <% if (item.review.length) { %>
@@ -51,7 +53,7 @@
             <td><%= review.reviewContent %></td>
             <td><%= review.reviewRating %></td>
             <td>
-
+              <% if (user) { %>
               <form action="/items/<%= review.id %>?_method=DELETE" method="POST">
                 <input type="hidden" name="itemId" value=<%= item._id %>>
                 <button type="submit">X</button>
@@ -64,6 +66,8 @@
                 <button type="submit">Update review</button>
               </form>
             </td>
+            <% } %>
+
           </tr>
           <% }); %>
         </tbody>

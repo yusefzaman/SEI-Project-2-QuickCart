@@ -1,9 +1,15 @@
-const Item = require("../models/item")
-const Review = require("../models/review")
+const Item = require('../models/item')
+const Review = require('../models/review')
 
 async function create(req, res) {
   try {
     const item = await Item.findById(req.params.id)
+
+    // Add the user-centric info to req.body (the new review)
+    req.body.user = req.user._id
+    req.body.userName = req.user.name
+    req.body.userAvatar = req.user.avatar
+
     const review = await Review.create(req.body)
     item.review.push(review._id)
     await item.save()
@@ -27,7 +33,7 @@ async function updateReview(req, res) {
   try {
     const itemId = req.body.itemId
     const updatedReview = await Review.findByIdAndUpdate(req.params.id, {
-      reviewContent: req.body.reviewContent,
+      reviewContent: req.body.reviewContent
     })
     res.redirect(`/categories/items/show/${itemId}`)
   } catch (err) {
@@ -38,5 +44,5 @@ async function updateReview(req, res) {
 module.exports = {
   create,
   delete: deleteReview,
-  update: updateReview,
+  update: updateReview
 }
