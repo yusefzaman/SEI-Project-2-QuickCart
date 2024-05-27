@@ -11,7 +11,6 @@
     <div class="comment-bar">
       <% if (user) { %>
       <h3> <%= item.itemName %> Reviews</h3>
-      <% if (user) { %>
       <form method="POST" action="/items/<%= item._id%>">
         <table>
           <tr>
@@ -53,9 +52,8 @@
             <td><%= review.createdAt.toLocaleDateString() %></td>
             <td><%= review.reviewContent %></td>
             <td><%= review.reviewRating %></td>
-            <% if (user) { %>
             <td>
-              <% if (user) { %>
+              <% if (user?._id.equals(review.user)) { %>
               <form action="/items/<%= review.id %>?_method=DELETE" method="POST">
                 <input type="hidden" name="itemId" value=<%= item._id %>>
                 <button type="submit">X</button>
@@ -69,6 +67,7 @@
               </form>
             </td>
             <% } %>
+
           </tr>
           <% }); %>
         </tbody>
