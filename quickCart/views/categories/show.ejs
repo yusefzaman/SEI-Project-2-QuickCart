@@ -1,4 +1,13 @@
 <%- include('../partials/header') %>
+<!DOCTYPE html>
+<html lang="en">
+
+
+<body>
+
+</body>
+
+</html>
 
 <body>
   <div class="box">
@@ -8,9 +17,11 @@
         <img src="<%= item.itemImg %>" class="img-items" />
         <h4><a class="itemDetails" href="/categories/items/show/<%= item._id%>"><%= item.itemName %> Details</a></h4>
         <h4><%= item.itemPrice %> BHD</h4>
-        <button class="categories-button">ADD TO CART</button>
+        <button class="categories-button" id="btn" value="<%= item._id%>">ADD TO CART</button>
       </div>
     </div>
     <% }); %>
   </div>
+
+
 </body>
