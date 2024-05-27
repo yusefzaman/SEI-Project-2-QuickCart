@@ -15,6 +15,15 @@ body {
     'nav'
     'main';
 }
+.aboutText {
+  text-align: left;
+  width: 800px;
+}
+
+.outVision,
+.ourImpact {
+  padding-top: 5px;
+}
 
 header {
   grid-area: header;
@@ -104,7 +113,6 @@ a {
   width: 200px;
   height: auto;
 }
-
 
 #add-review-form input[type='submit'] {
   width: 10rem;
