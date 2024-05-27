@@ -8,12 +8,12 @@ body {
   margin: 0;
   height: 100vh;
   display: grid;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   grid-template-rows: 50px 30px 1fr;
   grid-template-areas:
-    "header"
-    "nav"
-    "main";
+    'header'
+    'nav'
+    'main';
 }
 
 header {
@@ -83,7 +83,7 @@ img {
 
 a {
   text-decoration: none;
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .categories-button {
@@ -104,7 +104,7 @@ a {
   margin-left: 30px;
 }
 
-#add-review-form input[type="submit"] {
+#add-review-form input[type='submit'] {
   width: 10rem;
   grid-column: 2 / 3;
 }
@@ -159,7 +159,7 @@ a {
 .review-table {
   width: 100%;
   text-align: center;
-  }
+}
 .login img {
   height: 30px;
   width: 30px;
@@ -183,4 +183,18 @@ a {
 .review-user img {
   border-radius: 50%;
   height: 40px;
+}
+
+.itemDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: 30px;
+  color: black;
+  /* font-size: 20px; */
+  background-color: rgb(240, 232, 222);
+  font-weight: bold;
+  border: solid #31241e 2px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
