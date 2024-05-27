@@ -22,7 +22,8 @@ async function create(req, res) {
 async function deleteReview(req, res) {
   try {
     const itemId = req.body.itemId
-    const review = await Review.findByIdAndDelete(req.params.id)
+    const userId = req.user._id
+    const review = await Review.findByIdAndDelete(req.params.id, { userId })
     res.redirect(`/categories/items/show/${itemId}`)
   } catch (err) {
     console.log(err)

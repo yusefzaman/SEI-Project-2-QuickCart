@@ -53,7 +53,7 @@
             <td><%= review.reviewContent %></td>
             <td><%= review.reviewRating %></td>
             <td>
-              <% if (user) { %>
+              <% if (user?._id.equals(review.user)) { %>
               <form action="/items/<%= review.id %>?_method=DELETE" method="POST">
                 <input type="hidden" name="itemId" value=<%= item._id %>>
                 <button type="submit">X</button>
