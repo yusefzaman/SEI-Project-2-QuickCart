@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<h1>
+  My Basket:
+</h1>
+
+<% if (category.item.length) { %>
+  <h3>Items</h3>
+  <ul>
+    <% category.item.forEach((item) => { %>
+      <li><%= category.item %></li>
+    <% }); %>
+  </ul>
+<% } else { %>
+  <h5>No Items Yet</h5>
+<% } %>
+
+
+<%- include('../partials/footer') %>
