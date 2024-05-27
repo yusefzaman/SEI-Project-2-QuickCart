@@ -16,8 +16,8 @@
       <div class="box-text">
         <img src="<%= item.itemImg %>" class="img-items" />
         <h4><a class="itemDetails" href="/categories/items/show/<%= item._id%>"><%= item.itemName %> Details</a></h4>
-        <h4><%= item.itemPrice %> BHD</h4>
-        <button class="categories-button" id="btn" value="<%= item._id%>">ADD TO CART</button>
+        <h4 style="font-size: large;"><%= item.itemPrice %> BHD</h4>
+        <button class="itemsButton" id="btn" value="<%= item._id%>">ADD TO CART</button>
       </div>
     </div>
     <% }); %>
