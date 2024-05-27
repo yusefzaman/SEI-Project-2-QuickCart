@@ -1,9 +1,10 @@
 <%- include('../partials/header') %>
 
 <body>
-  <h1 style="margin-bottom: 0; font-family: Times New Roman, Times, serif">
-    categories
+  <h1 style="margin-bottom: 20px; font-family: Times New Roman, Times, serif">
+    Item Categories
   </h1>
+  <div class="catBox">
   <% categories.forEach(function(category) { %>
   <div class="category-box">
     <img src="<%= category.categoryImg %>" class="img-caterogy" style="display: inline;"/>
@@ -11,5 +12,7 @@
       <%= category.categoryName %>
     </a>
   </div>
-  <% }); %> <%- include('../partials/footer') %>
-</body>
+  <% }); %>
+</div>
+</body>  
+<%- include('../partials/footer') %>
