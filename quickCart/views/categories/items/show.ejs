@@ -40,14 +40,17 @@
       <table class="review-table">
         <thead>
           <tr>
+
+            <th style="width:10%">Name</th>
             <th>Date</th>
-            <th style="width:60%">Review</th>
+            <th style="width:50%">Review</th>
             <th>Rating</th>
           </tr>
         </thead>
         <tbody>
           <% item.review.forEach(function(review) { %>
           <tr>
+            <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td>
             <td><%= review.createdAt.toLocaleDateString() %></td>
             <td><%= review.reviewContent %></td>
             <td><%= review.reviewRating %></td>
