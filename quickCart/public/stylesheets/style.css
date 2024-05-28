@@ -8,12 +8,12 @@ body {
   margin: 0;
   height: 100vh;
   display: grid;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   grid-template-rows: 50px 30px 1fr;
   grid-template-areas:
-    'header'
-    'nav'
-    'main';
+    "header"
+    "nav"
+    "main";
 }
 .aboutText {
   text-align: left;
@@ -82,7 +82,7 @@ img {
 
 a {
   text-decoration: none;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .catBox {
@@ -107,7 +107,7 @@ a {
   text-align: center;
   font-size: x-large;
   font-weight: bolder;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   width: 250px;
   border: solid #31241e 2px;
 }
@@ -119,7 +119,7 @@ a {
   text-align: center;
   font-size: 25px;
   font-weight: bolder;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .img-caterogy {
@@ -129,7 +129,7 @@ a {
   justify-content: center;
 }
 
-#add-review-form input[type='submit'] {
+#add-review-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
 }
@@ -198,7 +198,7 @@ a {
   height: 34px;
   position: absolute;
   right: 130px;
-margin-bottom: 35px;
+  margin-bottom: 35px;
 }
 .basketIcon {
   height: 40px;
@@ -207,7 +207,7 @@ margin-bottom: 35px;
   position: absolute;
   right: 30px;
 }
-.userLogo{
+.userLogo {
   height: 40px;
   width: auto;
   margin-bottom: 18px;
@@ -236,7 +236,7 @@ margin-bottom: 35px;
   background-color: rgb(240, 232, 222);
   font-weight: bold;
   border: solid #31241e 2px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .logo {
@@ -246,4 +246,34 @@ margin-bottom: 35px;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-links {
+  margin-top: 5px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-icon {
+  height: 40px;
+  width: auto;
 }

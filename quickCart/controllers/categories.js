@@ -1,35 +1,23 @@
-const Category = require('../models/category')
-const Item = require('../models/item')
-const mongodb = require('mongodb')
-const Basket = require('../models/basket')
-const User = require('../models/user')
+const Basket = require("../models/basket")
+const Item = require("../models/item")
 
-async function index(req, res) {
-  const categories = await Category.find({})
-  res.render('categories/index', { title: 'All categories', categories })
+const addToCart = async (req, res) => {
+  try {
+    const basketId = req.user.basket
+    const basket = await Basket.findById(basketId)
+    basket.items.push(req.body.ItemId)
+    await basket.save()
+    res.render("categories/show", {
+      title: "The Category",
+      categories,
+      item,
+      basket: basketData,
+      successMessage: "Item added to basket successfully",
+    })
+  } catch (error) {
+    console.log(error)
+    // res.redirect("/planets")
+  }
 }
 
-async function show(req, res) {
-  const paramId = req.params.id
-  const categories = await Category.findById(paramId)
-  const item = await Item.find({ itemType: categories.categoryName })
-  const user = await User.findById(req.user.id).populate('basket')
-  const basketId = user.basket._id
-  const basket = await Basket.findById(basketId)
-  res.render('categories/show', {
-    title: 'The Category',
-    categories,
-    item,
-    basket
-  })
-}
-
-async function about(req, res) {
-  res.render('categories/about', { title: 'About' })
-}
-
-module.exports = {
-  index,
-  show,
-  about
-}
+module.exports = { addToCart }
