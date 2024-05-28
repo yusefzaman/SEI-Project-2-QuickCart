@@ -16,7 +16,6 @@ const addToCart = async (req, res) => {
     })
   } catch (error) {
     console.log(error)
-    // res.redirect("/planets")
   }
 }
 
