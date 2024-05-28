@@ -1,18 +1,19 @@
 <%- include('../partials/header') %>
+
 <body>
   <div class="box">
     <% items.forEach(item => { %>
     <div class="items-box">
       <div class="box-text">
         <img src="<%= item.itemImg %>" class="img-items" />
-        <h4><a class="itemDetails" href="/categories/items/show/<%= item._id%>"><%= item.itemName %> Details</a></h4>
+        <h4><a class="itemDetails" href="/categories/items/show/<%= item._id%>"><%= item.itemName %> Details<a>
+        </h4>
+
         <h4 style="font-size: large;"><%= item.itemPrice %> BHD</h4>
-        <button class="itemsButton" id="btn" value="<%= item._id%>">ADD TO CART</button>
-        <h4><%= item.itemPrice %> BHD</h4>
         <% if (basket) { %>
         <form method="POST" action="/basket/<%=basket._id%>/item">
           <input type="hidden" name="itemId" value="<%= item._id %>">
-          <button class="categories-button" type="submit">add to cart</button>
+          <button class="itemsButton" id="btn" value="<%= item._id%>">ADD TO CART</button>
         </form>
         <% }; %>
       </div>
@@ -20,7 +21,5 @@
     <% }); %>
   </div>
 
-<%- include('../partials/footer') %>
+  <%- include('../partials/footer') %>
 </body>
-
-
