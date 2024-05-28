@@ -6,11 +6,10 @@
     <h3><%= item.itemName %> <span style="text-align: right;"><%= item.itemPrice %> BHD</span></h3>
     <div><%= item.itemDescription %></div>
   </div>
-
   <div class=review-box>
     <div class="comment-bar">
-      <h3> <%= item.itemName %> Reviews</h3>
       <% if (user) { %>
+      <h3> <%= item.itemName %> Reviews</h3>
       <form method="POST" action="/items/<%= item._id%>">
         <table>
           <tr>
@@ -41,20 +40,22 @@
       <table class="review-table">
         <thead>
           <tr>
+
+            <th style="width:10%">Name</th>
             <th>Date</th>
-            <th style="width:60%">Review</th>
+            <th style="width:50%">Review</th>
             <th>Rating</th>
           </tr>
         </thead>
         <tbody>
           <% item.review.forEach(function(review) { %>
           <tr>
+            <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td>
             <td><%= review.createdAt.toLocaleDateString() %></td>
             <td><%= review.reviewContent %></td>
             <td><%= review.reviewRating %></td>
-            <% if (user) { %>
             <td>
-
+              <% if (user?._id.equals(review.user)) { %>
               <form action="/items/<%= review.id %>?_method=DELETE" method="POST">
                 <input type="hidden" name="itemId" value=<%= item._id %>>
                 <button type="submit">X</button>
@@ -68,6 +69,7 @@
               </form>
             </td>
             <% } %>
+
           </tr>
           <% }); %>
         </tbody>
@@ -77,5 +79,4 @@
       <% } %>
     </div>
   </div>
-
 </body>
