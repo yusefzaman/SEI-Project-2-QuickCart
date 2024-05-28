@@ -7,10 +7,15 @@ const addToCart = async (req, res) => {
     const basket = await Basket.findById(basketId)
     basket.items.push(req.body.ItemId)
     await basket.save()
-    res.redirect(`/categories/items/${req.body.ItemId}`)
+    res.render("categories/show", {
+      title: "The Category",
+      categories,
+      item,
+      basket: basketData,
+      successMessage: "Item added to basket successfully",
+    })
   } catch (error) {
     console.log(error)
-    // res.redirect("/planets")
   }
 }
 
