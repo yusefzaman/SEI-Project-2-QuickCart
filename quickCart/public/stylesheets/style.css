@@ -198,7 +198,7 @@ a {
   height: 34px;
   position: absolute;
   right: 130px;
-margin-bottom: 35px;
+  margin-bottom: 35px;
 }
 .basketIcon {
   height: 40px;
@@ -207,7 +207,7 @@ margin-bottom: 35px;
   position: absolute;
   right: 30px;
 }
-.userLogo{
+.userLogo {
   height: 40px;
   width: auto;
   margin-bottom: 18px;
@@ -246,4 +246,34 @@ margin-bottom: 35px;
   justify-content: center;
   align-items: center;
   margin-top: 20px;
+}
+
+.footer {
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.social-links {
+  margin-top: 5px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+.social-icon {
+  height: 40px;
+  width: auto;
 }
