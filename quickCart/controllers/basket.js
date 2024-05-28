@@ -1,17 +1,17 @@
 const Basket = require("../models/basket")
-const item = require("../models/item")
 const Item = require("../models/item")
 
-async function createCart(req, res) {
+const addToCart = async (req, res) => {
   try {
-    let basket = await Basket.findById(req.params.id)
-    basket.items.push(req.body.itemId)
+    const basketId = req.user.basket
+    const basket = await Basket.findById(basketId)
+    basket.items.push(req.body.ItemId)
     await basket.save()
-    res.redirect(`/items/${req.body.itemId}`)
-  } catch (err) {
-    console.error(err)
-    res.status(500).send("Error adding item to the basket")
+    res.redirect(`/categories/items/${req.body.ItemId}`)
+  } catch (error) {
+    console.log(error)
+    // res.redirect("/planets")
   }
 }
 
-module.exports = { createCart }
+module.exports = { addToCart }

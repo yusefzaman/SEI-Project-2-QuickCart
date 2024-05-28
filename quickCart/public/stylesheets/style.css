@@ -8,12 +8,12 @@ body {
   margin: 0;
   height: 100vh;
   display: grid;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   grid-template-rows: 50px 30px 1fr;
   grid-template-areas:
-    'header'
-    'nav'
-    'main';
+    "header"
+    "nav"
+    "main";
 }
 .aboutText {
   text-align: left;
@@ -82,7 +82,7 @@ img {
 
 a {
   text-decoration: none;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .catBox {
@@ -107,7 +107,7 @@ a {
   text-align: center;
   font-size: x-large;
   font-weight: bolder;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   width: 250px;
   border: solid #31241e 2px;
 }
@@ -119,7 +119,7 @@ a {
   text-align: center;
   font-size: 25px;
   font-weight: bolder;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .img-caterogy {
@@ -129,7 +129,7 @@ a {
   justify-content: center;
 }
 
-#add-review-form input[type='submit'] {
+#add-review-form input[type="submit"] {
   width: 10rem;
   grid-column: 2 / 3;
 }
@@ -236,7 +236,7 @@ a {
   background-color: rgb(240, 232, 222);
   font-weight: bold;
   border: solid #31241e 2px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .logo {

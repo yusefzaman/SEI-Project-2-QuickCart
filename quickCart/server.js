@@ -16,8 +16,7 @@ var categoriesRouter = require("./routes/categories")
 var itemsRouter = require("./routes/items")
 var reviewsRouter = require("./routes/reviews")
 var user = require("./models/user")
-// const basketRoutes = require("./routes/basket")
-const selectedRoutes = require("./routes/selected-item")
+const basketRouter = require("./routes/baskets")
 
 var app = express()
 
@@ -51,8 +50,7 @@ app.use("/", indexRouter)
 app.use("/categories", categoriesRouter)
 app.use("/categories/", itemsRouter)
 app.use("/", reviewsRouter)
-// app.use("/", basketRoutes)
-app.use("/", selectedRoutes)
+app.use("/categories/items", basketRouter) // Adjust the route prefix as needed
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
