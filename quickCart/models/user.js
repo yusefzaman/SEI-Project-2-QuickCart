@@ -11,6 +11,7 @@ const userSchema = new Schema(
     email: String,
     phoneNumber: String,
     avatar: String,
+    basket: { type: Schema.Types.ObjectId, ref: "Basket" },
   },
   {
     timestamps: true,

@@ -5,15 +5,15 @@
     Item Categories
   </h1>
   <div class="catBox">
-  <% categories.forEach(function(category) { %>
-  <div class="category-box">
-    <img src="<%= category.categoryImg %>" class="img-caterogy" style="display: inline;"/>
-    <a class="categories-button" href="/categories/<%= category._id %>">
-      <%= category.categoryName %>
-    </a>
+    <% categories.forEach(function(category) { %>
+    <div class="category-box">
+      <img src="<%= category.categoryImg %>" class="img-caterogy" style="display: inline;" />
+      <a class="categories-button" href="/categories/<%= category._id %>">
+        <%= category.categoryName %>
+      </a>
+    </div>
+    <% }); %>
   </div>
-  <% }); %>
-</div>
 </body>
 
 <%- include('../partials/footer') %>
