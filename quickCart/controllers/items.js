@@ -10,15 +10,6 @@ async function show(req, res) {
   })
 }
 
-async function addToCart(req, res) {
-  let basketItems = []
-  const clickedItem = req.query.id
-  basketItems.push(clickedItem)
-  console.log("array" + basketItems)
-  res.render("categories/items/show", { clickedItem })
-}
-
 module.exports = {
   show,
-  addToCart,
 }
