@@ -1,8 +1,7 @@
 var express = require("express")
 var router = express.Router()
-const basketCtrl = require("../controllers/baskets")
+const basketController = require("../controllers/basket")
 
-router.get("/items/show/:id", itemsCtrl.show)
-router.get("/items/show/:id", itemsCtrl.addToCart)
+router.post("/:id/baskets", basketController.addToCart)
 
 module.exports = router

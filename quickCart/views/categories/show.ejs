@@ -2,7 +2,7 @@
 
 <body>
   <div class="box">
-    <% items.forEach(item => { %>
+    <% item.forEach(item => { %>
     <div class="items-box">
       <div class="box-text">
         <img src="<%= item.itemImg %>" class="img-items" />
@@ -10,12 +10,10 @@
         </h4>
 
         <h4 style="font-size: large;"><%= item.itemPrice %> BHD</h4>
-        <% if (basket) { %>
-        <form method="POST" action="/basket/<%=basket._id%>/item">
-          <input type="hidden" name="itemId" value="<%= item._id %>">
-          <button class="itemsButton" id="btn" value="<%= item._id%>">ADD TO CART</button>
+        <form method="POST" action="/categories/items/<%= item._id %>/baskets">
+          <input type="hidden" name="ItemId" value="<%= item._id %>">
+          <button class="itemsButton" id="btn">ADD TO CART</button>
         </form>
-        <% }; %>
       </div>
     </div>
     <% }); %>

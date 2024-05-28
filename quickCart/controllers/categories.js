@@ -12,16 +12,14 @@ async function index(req, res) {
 async function show(req, res) {
   const paramId = req.params.id
   const categories = await Category.findById(paramId)
-  const items = await Item.find({ itemType: categories.categoryName })
+  const item = await Item.find({ itemType: categories.categoryName })
   const user = await User.findById(req.user.id).populate("basket")
-  const cateItem = categories.items
   const basketId = user.basket._id
   const basket = await Basket.findById(basketId)
   res.render("categories/show", {
     title: "The Category",
     categories,
-    items,
-    cateItem,
+    item,
     basket,
   })
 }
