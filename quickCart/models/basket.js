@@ -3,7 +3,6 @@ const Schema = mongoose.Schema
 const basketSchema = new Schema(
   {
     items: [{ type: Schema.Types.ObjectId, ref: 'item' }],
-    // quantity: Number,
     totalPrice: Number
   },
   {
