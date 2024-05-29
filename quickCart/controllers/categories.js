@@ -52,9 +52,12 @@ async function deleteItem(req, res) {
   try {
     const itemId = req.body.itemId
     const user = await User.findById(req.user.id).populate('basket')
-    user.basket.items = user.basket.items.filter(
-      (item) => item.toString() !== itemId
+    const itemToRemove = user.basket.items.findIndex(
+      (item) => item.toString() === itemId
     )
+    if (itemToRemove !== -1) {
+      user.basket.items.splice(itemToRemove, 1)
+    }
     await user.basket.save()
     res.redirect(`/categories/basket/`)
   } catch (err) {
