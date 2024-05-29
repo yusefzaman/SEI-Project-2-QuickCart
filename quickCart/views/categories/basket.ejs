@@ -22,7 +22,12 @@
 
   <h1>Total price: <%= totalPrice %> BHD</h1>
 
-  <button>confirm your order</button>
+  
+  <form action="/categories/receipt/" method="POST">
+    <input type="hidden" name="userId" value=<%= user._id %>>
+    <button>confirm your order</button>
+  </form>
+
 <% } else { %>
   <p>Your basket is empty</p>
 <% } %>
