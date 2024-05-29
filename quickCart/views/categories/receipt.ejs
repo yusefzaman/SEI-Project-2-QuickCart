@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+
+<h1><%= title %></h1>
+
+<% if (basketItems) { %>
+  <ul>
+    <% basketItems.forEach(item => { %>
+      <li>
+        <h3>Name: <%= item.itemName %></h3>
+        <p>Price: <%= item.itemPrice %></p>
+      </li>
+    <% }) %>
+    </h1>
+  </ul>
+  <h1>Total price: <%= totalPrice %> BHD</h1>
+<% } %>
+
+
+
+

@@ -6,6 +6,8 @@ const ensureLoggedIn = require('../config/ensureLoggedIn')
 router.get('/', categoriesCtrl.index)
 router.get('/about', categoriesCtrl.about)
 router.get('/basket', ensureLoggedIn, categoriesCtrl.showBasket)
+router.post('/receipt', ensureLoggedIn, categoriesCtrl.confirmOrder)
+router.get('/receipt', ensureLoggedIn, categoriesCtrl.confirmOrder)
 router.get('/:id', categoriesCtrl.show)
 router.delete('/basket/:id', ensureLoggedIn, categoriesCtrl.deleteItem)
 

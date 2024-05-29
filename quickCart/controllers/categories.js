@@ -32,9 +32,9 @@ const showBasket = async (req, res) => {
         return item
       })
     )
+
     let totalPrice = 0
     for (const item of basketItems) {
-      const price = item.itemPrice
       totalPrice += item.itemPrice
     }
     res.render('categories/basket', {
@@ -64,7 +64,42 @@ async function deleteItem(req, res) {
     console.log(err)
   }
 }
+
+const confirmOrder = async (req, res) => {
+  try {
+    const user = await User.findById(req.body.userId).populate('basket')
+    console.log(`user ${JSON.stringify(user, null, 2)}`)
+    const basket = user.basket
+
+    const basketItems = await Promise.all(
+      basket.items.map(async (itemId) => {
+        const item = await Item.findById(itemId)
+        return item
+      })
+    )
+
+    let totalPrice = 0
+    for (const item of basketItems) {
+      totalPrice += item.itemPrice
+    }
+
+    // Basket.drop
+    user.basket = await Basket.create({ items: [], totalPrice: 0 })
+    await user.save()
+
+    res.render('categories/receipt', {
+      title: 'The Receipt',
+      basketItems,
+      totalPrice
+    })
+  } catch (error) {
+    console.error('Error fetching Receipt:', error)
+    res.status(500).send('Error fetching basket')
+  }
+}
+
 module.exports = {
+  confirmOrder,
   deleteItem,
   showBasket,
   index,
