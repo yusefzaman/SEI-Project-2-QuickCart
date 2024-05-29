@@ -1,0 +1,32 @@
+<%- include('../partials/header') %>
+
+
+<h1><%= title %></h1>
+
+<% if (basketItems) { %>
+  <ul>
+    <% basketItems.forEach(item => { %>
+      <li>
+        <img src="<%= item.itemImg %>">
+        <h3>Name: <%= item.itemName %></h3>
+        <p>Description: <%= item.itemDescription %></p>
+        <p>Price: <%= item.itemPrice %></p>
+        <form action="/basket/<%= item.id %>?_method=DELETE" method="POST">
+          <input type="hidden" name="itemId" value=<%= item._id %>>
+          <button type="submit">X</button>
+        </form>
+      </li>
+    <% }) %>
+    </h1>
+  </ul>
+
+  <h1>Total price: <%= totalPrice %> BHD</h1>
+
+  <button>confirm your order</button>
+<% } else { %>
+  <p>Your basket is empty</p>
+<% } %>
+
+
+
+
