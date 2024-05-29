@@ -120,6 +120,7 @@ a {
   font-size: 25px;
   font-weight: bolder;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
 }
 
 .img-caterogy {
@@ -198,15 +199,15 @@ a {
   height: 34px;
   position: absolute;
   right: 130px;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 .basketIcon {
-  height: 60px;
+  height: 40px;
   width: auto;
   margin-bottom: 18px;
   position: absolute;
-  right: 30px;
+  right: 100px;
   cursor: pointer;
 }
 .userLogo {
@@ -261,21 +262,26 @@ a {
 
 .footer-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
 }
 
-.social-links {
-  margin-top: 5px;
+.footer-left {
+  flex: 1;
+  text-align: left;
+}
+
+.footer-right {
+  display: flex;
+  gap: 10px;
 }
 
 .social-links a {
-  margin: 0 10px;
-  text-decoration: none;
+  display: inline-block;
 }
 
 .social-icon {
-  height: 40px;
-  width: auto;
+  width: 30px;
+  height: 30px;
 }
+
