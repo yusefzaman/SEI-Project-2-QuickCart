@@ -19,13 +19,16 @@
     <% if (user) { %>
     <a href="/categories" <%- title === 'All categories' ? 'class="active"' : '' %>>CATEGORIES</a>
     <a href="/logout" class="login">LOG OUT</a>
+    <a href="/categories/basket">BASKET</a>
+
     <img class="userLogo" src="https://www.svgrepo.com/show/347123/login-circle.svg">
+    <img href="/categories/basket" class="basketIcon" src="https://clipground.com/images/shopping-cart-icon-png-9.png">
     <% } else { %>
     <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
     <img class="userLogo" src="https://iconape.com/wp-content/files/qw/369870/svg/login-logo-icon-png-svg.png">
 
     <% } %>
-    <img href="/basket/index" class="basketIcon" src="https://cdn-icons-png.freepik.com/512/1077/1077979.png">
+    
 
   </nav>
   <main>
