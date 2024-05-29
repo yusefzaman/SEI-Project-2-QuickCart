@@ -126,7 +126,7 @@ nav > a.active {
 }
 
 .login img {
-  width: 20px;
+  width: 27px;
   vertical-align: middle;
 }
 
@@ -180,16 +180,15 @@ a {
   border-radius: 5px;
 }
 
-#add-toCart-btn {
+#add-toCart-btn:hover {
   cursor: pointer;
-  background-color: #1a0b0200;
+  background-color: #0e0d0c62;
   border-color: #43270800;
 }
 
-#add-toCart-btn:hover {
-  cursor: pointer;
-  background-color: #1a0b024d;
-  border-color: #43270800;
+#add-toCart-btn img {
+  width: 27px;
+  height: 27px;
 }
 
 .img-caterogy {
@@ -240,6 +239,14 @@ a {
   border-radius: 30px;
 }
 
+#add-toCart-btn {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #1a0b023c;
+  border-color: #43270800;
+}
+
 .review-box {
   margin-top: 40px;
   background-color: rgb(217, 211, 211);
@@ -280,8 +287,8 @@ a {
   align-items: center;
   width: auto;
   height: 30px;
-  color: black;
-  background-color: rgb(240, 232, 222);
+  color: #150d08;
+  background-color: rgb(255, 253, 250);
   font-weight: bold;
   border: solid #31241e 2px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -520,16 +527,17 @@ a {
 #confirm-Order {
   width: auto;
   height: 30px;
-  color: #ccc;
-  background-color: #31241e;
+  color: #fdfdfc;
+  background-color: #9e570b;
+  border-color: #956028;
   cursor: pointer;
   border-radius: 10px;
 }
 
 #confirm-Order:hover {
-  color: #31241e;
+  color: #fdfdfc;
   border-color: #f9eaea;
-  background-color: #ddd;
+  background-color: #2d2824;
   cursor: pointer;
   border-radius: 10px;
 }

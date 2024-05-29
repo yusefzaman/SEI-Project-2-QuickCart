@@ -24,18 +24,17 @@
     <div class="nav-center">
       <div class="welcomeText">Welcome, <%= user.name %>!</div>
     </div>
-
     <div class="nav-right">
+      <a href="/logout" class="login">LOG OUT
+      <img class="navIcon" src="https://www.svgrepo.com/show/347123/login-circle.svg"></a>
       <a href="/categories/basket">
         <img class="navIcon" src="https://clipground.com/images/shopping-cart-icon-png-9.png">
       </a>
-      <a href="/logout" class="login">
-      <img class="navIcon" src="https://www.svgrepo.com/show/347123/login-circle.svg">LOG OUT</a>
     </div>
     <% } else { %>
     <div class="nav-right">
-      <a href="/auth/google" class="login">
-      <img class="navIcon" src="https://iconape.com/wp-content/files/qw/369870/svg/login-logo-icon-png-svg.png">LOG IN</a>
+      <a href="/auth/google" class="login">LOG IN
+      <img id="LOGIN" class="navIcon" src="https://iconape.com/wp-content/files/qw/369870/svg/login-logo-icon-png-svg.png"></a>
     </div>
     <% } %>
   </nav>
