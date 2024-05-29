@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
   <title><%= title %></title>
 </head>
 
@@ -13,24 +13,31 @@
   <header>
     <img src="https://www10.0zz0.com/2024/05/26/12/173198798.jpg" alt="Logo" class="logo">
   </header>
+
   <nav class="headerTop">
-    <a href="/categories/about/" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
+    <div class="nav-left">
+      <a href="/categories/about/" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
+      <a href="/categories" <%- title === 'All categories' ? 'class="active"' : '' %>>CATEGORIES</a>
+    </div>
+
     <% if (user) { %>
-    <a href="/categories" <%- title === 'All categories' ? 'class="active"' : '' %>>CATEGORIES</a>
+    <div class="nav-center">
+      <div class="welcomeText">Welcome, <%= user.name %>!</div>
+    </div>
 
-    <a><img class="userLogo" src="https://www.svgrepo.com/show/347123/login-circle.svg"></a>
-
-    <a>Welcome, <%= user.name %>!</a>
-
-    <a href="/logout" class="login">LOG OUT</a>
-
-    <a href="/categories/basket">
-    <img class="basketIcon" src="https://clipground.com/images/shopping-cart-icon-png-9.png">
-  </a>
+    <div class="nav-right">
+      <a href="/logout" class="login">LOG OUT</a>
+      <img class="navIcon" src="https://www.svgrepo.com/show/347123/login-circle.svg">
+      <a href="/categories/basket">
+        <img class="navIcon" src="https://clipground.com/images/shopping-cart-icon-png-9.png">
+      </a>
+    </div>
     <% } else { %>
-    <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
-
-    <img class="userLogo" src="https://iconape.com/wp-content/files/qw/369870/svg/login-logo-icon-png-svg.png">
+    <div class="nav-right">
+      <a href="/auth/google" class="login">LOG IN</a>
+      <img class="navIcon" src="https://iconape.com/wp-content/files/qw/369870/svg/login-logo-icon-png-svg.png">
+    </div>
     <% } %>
   </nav>
+
   <main>

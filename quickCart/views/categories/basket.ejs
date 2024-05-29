@@ -1,37 +1,33 @@
 <%- include('../partials/header') %>
 
-
 <h1><%= title %></h1>
 
-<% if (basketItems) { %>
-  <ul>
+<% if (basketItems && basketItems.length > 0) { %>
+  <div class="basket-items">
     <% basketItems.forEach(item => { %>
-      <li>
-        <img src="<%= item.itemImg %>">
-        <h3>Name: <%= item.itemName %></h3>
-        <p>Description: <%= item.itemDescription %></p>
-        <p>Price: <%= item.itemPrice %></p>
-        <form action="/categories/basket/<%= item.id %>?_method=DELETE" method="POST">
-        <input type="hidden" name="itemId" value=<%= item._id %>>
-          <button type="submit">X</button>
-        </form>
-      </li>
+      <div class="basket-item">
+        <img src="<%= item.itemImg %>" class="item-img">
+        <div class="item-details">
+          <h3>Name: <%= item.itemName %></h3>
+          <p>Description: <%= item.itemDescription %></p>
+          <p>Price: <%= item.itemPrice %> BHD</p>
+          <form action="/categories/basket/<%= item.id %>?_method=DELETE" method="POST">
+            <input type="hidden" name="itemId" value="<%= item._id %>">
+            <button type="submit" class="delete-button">X</button>
+          </form>
+        </div>
+      </div>
     <% }) %>
-    </h1>
-  </ul>
+  </div>
 
   <h1>Total price: <%= totalPrice %> BHD</h1>
 
-  
   <form action="/categories/receipt/" method="POST">
-    <input type="hidden" name="userId" value=<%= user._id %>>
-    <button>confirm your order</button>
+    <input type="hidden" name="userId" value="<%= user._id %>">
+    <button>Confirm Your Order</button>
   </form>
 
 <% } else { %>
   <p>Your basket is empty</p>
 <% } %>
-
-
-
 
