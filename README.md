@@ -54,13 +54,13 @@
 
 ### **_Screenshots_**
 
-##### image header 1
+##### About Page
 
-### placeholder!
+![alt text](image.png)
 
-##### image header 2
+##### Categories Page
 
-### placeholder!
+![alt text](image-1.png)
 
 ---
 
