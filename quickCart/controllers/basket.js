@@ -3,11 +3,9 @@ const Item = require('../models/item')
 
 const addToCart = async (req, res) => {
   try {
-    // Item
     const items = JSON.parse(req.body.items)
     const basketId = req.user.basket
     const basket = await Basket.findById(basketId)
-    // Only add items that were selected
     basket.items.push(req.params.id)
     await basket.save()
     res.render('categories/show', {

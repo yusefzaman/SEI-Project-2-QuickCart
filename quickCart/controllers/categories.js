@@ -82,7 +82,6 @@ const confirmOrder = async (req, res) => {
       totalPrice += item.itemPrice
     }
 
-    // Basket.drop
     user.basket = await Basket.create({ items: [], totalPrice: 0 })
     await user.save()
 
