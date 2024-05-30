@@ -7,14 +7,16 @@
     <div class="items-box">
       <div class="box-text">
         <img src="<%= item.itemImg %>" class="img-items" />
-        <h4><a class="itemDetails" href="/categories/items/show/<%= item._id%>"><%= item.itemName %> Details<a>
-        </h4>
-        <% if (user) { %>
+        <h2><%= item.itemName %></h2>
         <h4 style="font-size: large;"><%= item.itemPrice %> BHD</h4>
+        <h4><a class="itemDetails" id="readMore" href="/categories/items/show/<%= item._id%>">READ MORE<a>
+        </h4>
+        
+        <% if (user) { %>
         <form method="POST" action="/categories/items/<%= item._id %>/baskets">
           <input type="hidden" name="ItemId" value="<%= item._id %>">
           <input type="hidden" name="items" value="<%= JSON.stringify(items) %>">
-          <button class="itemsButton" id="btn">ADD TO CART</button>
+          <button id="add-toCart-btn"><img class="add-toCart" src="https://clipground.com/images/shopping-cart-icon-png-9.png"></button>
         </form>
         <% } %>
       </div>

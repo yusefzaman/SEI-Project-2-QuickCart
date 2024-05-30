@@ -8,7 +8,7 @@
       <div class="basket-item">
         <img src="<%= item.itemImg %>" class="item-img">
         <div class="item-details">
-          <h3>Name: <%= item.itemName %></h3>
+          <h3>Item: <%= item.itemName %></h3>
           <p>Description: <%= item.itemDescription %></p>
           <p>Price: <%= item.itemPrice %> BHD</p>
           <form action="/categories/basket/<%= item.id %>?_method=DELETE" method="POST">
@@ -24,10 +24,11 @@
 
   <form action="/categories/receipt/" method="POST">
     <input type="hidden" name="userId" value="<%= user._id %>">
-    <button>Confirm Your Order</button>
+    <button id="confirm-Order">Confirm Your Order</button>
   </form>
 
 <% } else { %>
   <p>Your basket is empty</p>
 <% } %>
 
+<%- include('../partials/footer') %>

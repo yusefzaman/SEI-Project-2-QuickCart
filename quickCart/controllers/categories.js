@@ -5,7 +5,7 @@ const User = require('../models/user')
 
 async function index(req, res) {
   const categories = await Category.find({})
-  res.render('categories/index', { title: 'All categories', categories })
+  res.render('categories/index', { title: 'All Categories', categories })
 }
 
 async function show(req, res) {
@@ -13,7 +13,7 @@ async function show(req, res) {
   const categories = await Category.findById(paramId)
   const items = await Item.find({ itemType: categories.categoryName })
   res.render('categories/show', {
-    title: 'Items For This Category',
+    title: `All Items`,
     items
   })
 }
@@ -68,7 +68,6 @@ async function deleteItem(req, res) {
 const confirmOrder = async (req, res) => {
   try {
     const user = await User.findById(req.body.userId).populate('basket')
-    console.log(`user ${JSON.stringify(user, null, 2)}`)
     const basket = user.basket
 
     const basketItems = await Promise.all(
