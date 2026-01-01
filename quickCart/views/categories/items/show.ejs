@@ -1,0 +1,85 @@
+<%- include('../../partials/header') %>
+
+<body>
+  <div class="itemDetails-box">
+    <img src="<%= item.itemImg %>">
+    <h3><%= item.itemName %> <span class="item-price"><%= item.itemPrice %> BHD</span></h3>
+    <div><%= item.itemDescription %></div>
+  </div>
+
+  <div class="review-box">
+    <div class="comment-bar">
+      <% if (user) { %>
+      <h3><%= item.itemName %> Reviews</h3>
+      <form method="POST" action="/items/<%= item._id %>">
+        <div class="review-input">
+          <label for="reviewContent">Review:</label>
+          <input type="text" id="reviewContent" name="reviewContent" style="width: 300px;"> <!-- Make wider -->
+        </div>
+        <div class="review-input">
+          <label for="reviewRating">Rating:</label>
+          <select id="reviewRating" name="reviewRating" style="width: 100px;"> <!-- Make wider -->
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5" selected>5</option>
+          </select>
+        </div>
+        <div class="submit-review">
+          <input type="submit" value="Add Review">
+        </div>
+      </form>
+      <% } %>
+    </div>
+
+    <div class="show-reviews">
+      <% if (item.review.length) { %>
+      <table class="review-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Review</th>
+            <th>Rating</th>
+            <% if (user) { %>
+            <th colspan="2">Actions</th>
+            <% } %>
+          </tr>
+        </thead>
+        <tbody>
+          <% item.review.forEach(function(review) { %>
+          <tr>
+            <td class="review-user"><img alt="avatar" src="<%= review.userAvatar %>" referrerpolicy="no-referrer" ><%= review.userName %></td>
+            <td><%= review.createdAt.toLocaleDateString() %></td>
+            <td><%= review.reviewContent %></td>
+            <td><%= review.reviewRating %></td>
+            <% if (user?._id.equals(review.user)) { %>
+            <td>
+              <form action="/items/<%= review.id %>?_method=DELETE" method="POST">
+                <input type="hidden" name="itemId" value=<%= item._id %>>
+                <button type="submit">Delete</button>
+              </form>
+            </td>
+            <td>
+              <form action="/items/<%= review.id %>?_method=PUT" method="POST" autocomplete="off">
+                <input type="hidden" name="itemId" value=<%= item._id %>>
+                <input type="text" name="reviewContent" value="<%= review.reviewContent %>">
+                <button type="submit">Update</button>
+              </form>
+            </td>
+            <% } else { %>
+            <td colspan="2"></td> 
+            <% } %>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+      <% } else { %>
+      <h5>No Reviews Yet</h5>
+      <% } %>
+    </div>
+  </div>
+</body>
+
+<%- include('../../partials/footer') %>
