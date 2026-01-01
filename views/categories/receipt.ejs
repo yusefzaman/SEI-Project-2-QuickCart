@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+
+<h1><%= title %></h1>
+
+<div class="receipt">
+  <div class="receipt-header">
+    <h2>Order Summary</h2>
+    <p>Date: <%= new Date().toLocaleDateString() %></p>
+  </div>
+
+  <div class="receipt-items">
+    <ul>
+      <% basketItems.forEach(item => { %>
+        <li>
+          <h3>Item: <%= item.itemName %></h3>
+          <p>Price: <%= item.itemPrice %> BHD</p>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+
+  <div class="receipt-total">
+    <h3>Total Price: <%= totalPrice %> BHD</h3>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

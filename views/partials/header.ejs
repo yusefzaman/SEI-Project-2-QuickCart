@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <title><%= title %></title>
+</head>
+
+<body>
+  <header>
+    <img src="https://www12.0zz0.com/2024/05/29/18/841640088.png" alt="Logo" class="logo">
+  </header>
+
+  <nav class="headerTop">
+    <div class="nav-left">
+      <a href="/categories/about/" <%- title === 'About' ? 'class="active"' : '' %>>ABOUT</a>
+      <a href="/categories" <%- title === 'All Categories' ? 'class="active"' : '' %>>CATEGORIES</a>
+    </div>
+
+    <% if (user) { %>
+    <div class="nav-center">
+      <div class="welcomeText">Welcome, <%= user.name %>!</div>
+    </div>
+    <div class="nav-right">
+      <a href="/logout" class="login">LOG OUT
+      <img class="navIcon" src="https://www.svgrepo.com/show/347123/login-circle.svg"></a>
+      <a href="/categories/basket">
+        <img class="navIcon" src="https://clipground.com/images/shopping-cart-icon-png-9.png">
+      </a>
+    </div>
+    <% } else { %>
+    <div class="nav-right">
+      <a href="/auth/google" class="login">LOG IN
+      <img id="LOGIN" class="navIcon" src="https://iconape.com/wp-content/files/qw/369870/svg/login-logo-icon-png-svg.png"></a>
+    </div>
+    <% } %>
+  </nav>
+
+  <main>
