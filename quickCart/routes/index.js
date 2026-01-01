@@ -17,12 +17,13 @@ router.get(
 )
 
 router.get(
-  '/oauth2callback',
+  '/auth/google/callback',
   passport.authenticate('google', {
     successRedirect: '/categories',
     failureRedirect: '/categories'
   })
 )
+
 
 router.get('/logout', function (req, res) {
   req.logout(function () {
