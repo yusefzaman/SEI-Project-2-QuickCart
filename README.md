@@ -63,6 +63,7 @@
 ![alt text](image-1.png)
 
 ---
+Live site: [QuickCart](https://sei-project-2-quickcart.onrender.com)
 
 ### **_Future Updates_**
 
